@@ -4,10 +4,9 @@ var arrayCognome = ["Bianchi","Verdi","Gialli","Marroni","Ciao","Rossi","Ciani",
 
 arrayCognome[8] = cognome;
 
+arrayCognome.sort();
+
 console.log(arrayCognome);
-
-
-  
   
 for(var i = 0; i < arrayCognome.length; i++){
   
@@ -16,12 +15,11 @@ for(var i = 0; i < arrayCognome.length; i++){
     var contenuto_precendente = document.getElementById('lista').innerHTML;
     
     document.getElementById('lista').innerHTML = contenuto_precendente + "<li>" +elemento_lista+ "</li>";
-    
-    if(elemento_lista === cognome && isNaN(cognome)==true){
-        document.getElementById('trovato').innerHTML = "Il tuo cognome si trova nella posizione: " + arrayCognome.length;
-    }else{
-        document.getElementById('trovato').innerHTML = "Hai inserito un valore non valido";
-    }
-
 
 }
+
+var trovato = arrayCognome.indexOf(cognome);
+
+trovato +=  1;
+
+document.getElementById("trovato").innerHTML = "Il tuo cognome si trova nella posizione: " + trovato;
